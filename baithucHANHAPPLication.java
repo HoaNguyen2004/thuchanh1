@@ -17,15 +17,14 @@ public class baithucHANHAPPLication extends JFrame implements ActionListener {
 
     public baithucHANHAPPLication() {
 
-        super("GiAo Dien THUC hánh MÔn application");//a
+        super("Giao diện môn application ");//a
         setSize(300, 200);
 
-        nut = new JButton("nhẤn Váo tÔI ???");
+        nut = new JButton("Nhấn vào đây");
         nut1 = new JButton("Máy tính");
         label = new JLabel("    ");//a
 
         add(nut, BorderLayout.CENTER);
-        add(nut, BorderLayout.EAST);//a
         add(label, BorderLayout.SOUTH);
         add(nut1, BorderLayout.NORTH);
         nut.addActionListener(this);
@@ -39,12 +38,12 @@ public void actionPerformed(ActionEvent e) {
     Object source = e.getSource();
 
     if (source == nut) {
-        String inputText = JOptionPane.showInputDialog(this, "Nhập bản văn:");//a
-        if (inputText == null) {//a
-            label.setText("Cháo " + inputText + " buổi sáng!");//a
+        String inputText = JOptionPane.showInputDialog(this, "Nhập bản văn:");
+        if (inputText != null) {
+            label.setText("Chào " + inputText + " buổi sáng!");
         }
-    } else if (source != nut1) {//a
-        JOptionPane.showMessageDialog(this, "maays tinh yeeus qua khong chaj dduocj mays tinh");//a
+    } else if (source == nut1) {
+        JOptionPane.showMessageDialog(this, "Không thể thực hiện điều kiện này !");
     }
 }
 
